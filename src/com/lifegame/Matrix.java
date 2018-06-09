@@ -21,7 +21,7 @@ public class Matrix {
 		matrix =new int[height][width];
 		for(int i=0;i<matrix.length;i++) {
 			for(int j=0;j<matrix[i].length;j++) {
-				if(new Random().nextInt(10)>8)
+				if(new Random().nextInt(100)>95)
 					matrix[i][j]=1;
 				else
 					matrix[i][j]=0;
@@ -29,7 +29,7 @@ public class Matrix {
 		}
 		return matrix;
 	}
-	public void transform(int[][]matrix){
+	public int[][] transform(int[][]matrix){
 		int[][] nextMatrix=new int[height][width];
 		for (int y = 0; y < matrix.length; y++) {
 			for (int x = 0; x < matrix[0].length; x++) {
@@ -46,6 +46,7 @@ public class Matrix {
 			}
 		}
 		matrix=nextMatrix;
+		return matrix;
 	}
 	public int findLifedNum(int y, int x){
 		int num=0;
